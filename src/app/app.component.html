@@ -1,20 +1,154 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+
+
+<div class="nav sticky">
+  <button mat-button (click)="scroll(about)">About</button>
+  <button mat-button (click)="scroll(experience)">Experience</button>
+  <button mat-button (click)="scroll(projects)">Projects</button>
+  <button mat-button (click)="scroll(contact)">Contact</button>
 </div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+
+<div #about class="section about">
+  <div class="profile-photo"></div>
+  <h3>Daryl Drake</h3>
+
+  <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+  <button mat-raised-button>
+    Resume
+    <i class="fas fa-file-download"></i></button>
+
+</div>
+
+<mat-card #experience class="section experience ">
+  <h3>Experience</h3>
+
+  <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+
+  <mat-tab-group>
+    <mat-tab label="Research">
+      <h3>Some more tab content</h3>
+      <p>...</p>
+    </mat-tab>
+    <mat-tab label="Abbvie">
+      <h3>Some tab content</h3>
+      <p>...</p>
+    </mat-tab>
+    <mat-tab label="Jump">
+      <h3>Some more tab content</h3>
+      <p>...</p>
+    </mat-tab>
+    <mat-tab label="Epic">
+      <h3>Some more tab content</h3>
+      <p>...</p>
+    </mat-tab>
+  </mat-tab-group>
+
+</mat-card>
+
+<mat-divider class="divider"></mat-divider>
+
+<div #projects class="section projects">
+
+  <h3>Projects</h3>
+
+  <p>lorem;lwknfkjwbfqbefaljkshdalkjhdflkjahlkjahdlfkjahdlfkjahdlkfjahdlfkjhaldkj</p>
+
+  <mat-accordion>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Personal data
+        </mat-panel-title>
+        <mat-panel-description>
+          Type your name and age
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Personal data
+        </mat-panel-title>
+        <mat-panel-description>
+          Type your name and age
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Personal data
+        </mat-panel-title>
+        <mat-panel-description>
+          Type your name and age
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Personal data
+        </mat-panel-title>
+        <mat-panel-description>
+          Type your name and age
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Personal data
+        </mat-panel-title>
+        <mat-panel-description>
+          Type your name and age
+        </mat-panel-description>
+
+      </mat-expansion-panel-header>
+      retererter
+    </mat-expansion-panel>
+
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Personal data
+        </mat-panel-title>
+        <mat-panel-description>
+          Type your name and age
+        </mat-panel-description>
+
+
+
+
+
+
+      </mat-expansion-panel-header>
+
+      <p>This is the primary content of the panel.</p>
+
+      <mat-action-row>
+        <button mat-button>Click me</button>
+      </mat-action-row>
+    </mat-expansion-panel>
+  </mat-accordion>
+
+
+</div>
+
+<mat-divider class="divider"></mat-divider>
+
+<div #contact class="section contact">
+  <h3>Contact</h3>
+  <a mat-raised-button href="mailto:example@email.com?subject=Email%20Subject">dadrake3@gmail.com</a>
+  <p>1(630)-800-5456</p>
+  <i class="fab fa-github"></i>
+
+
+</div>
+
+
+
 
