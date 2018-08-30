@@ -1,48 +1,188 @@
-
-
-<div class="nav sticky">
-  <button mat-button (click)="scroll(about)">About</button>
-  <button mat-button (click)="scroll(experience)">Experience</button>
-  <button mat-button (click)="scroll(projects)">Projects</button>
-  <button mat-button (click)="scroll(contact)">Contact</button>
+<div (sroll)="test($event)" class="nav sticky">
+  <button mat-raised-button (click)="scroll(about)">About</button>
+  <button mat-raised-button (click)="scroll(experience)">Experience</button>
+  <button mat-raised-button (click)="scroll(projects)">Projects</button>
+  <button mat-raised-button (click)="scroll(education)">Education</button>
+  <button mat-raised-button (click)="scroll(contact)">Contact</button>
 </div>
 
 <div #about class="section about">
-  <div class="profile-photo"></div>
-  <h3>Daryl Drake</h3>
+  <div class="profile">
+    <div class="profile-photo"></div>
+    <div class="profile-info">
+      <h3>Daryl Drake</h3>
+      <button  mat-raised-button>
+        Resume
+        <i class="fas fa-file-download"></i>
+      </button>
+    </div>
 
-  <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-  <button mat-raised-button>
-    Resume
-    <i class="fas fa-file-download"></i></button>
+
+
+
+  </div>
+  <p>{{this.profileDesc}}</p>
+
+
+
 
 </div>
 
-<mat-card #experience class="section experience ">
-  <h3>Experience</h3>
 
-  <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
 
-  <mat-tab-group>
-    <mat-tab label="Research">
-      <h3>Some more tab content</h3>
-      <p>...</p>
-    </mat-tab>
-    <mat-tab label="Abbvie">
-      <h3>Some tab content</h3>
-      <p>...</p>
-    </mat-tab>
-    <mat-tab label="Jump">
-      <h3>Some more tab content</h3>
-      <p>...</p>
-    </mat-tab>
-    <mat-tab label="Epic">
-      <h3>Some more tab content</h3>
-      <p>...</p>
-    </mat-tab>
-  </mat-tab-group>
 
-</mat-card>
+<div #experience class="section">
+  <mat-card  class=" experience ">
+    <h3>Experience</h3>
+
+    <p>{{this.experienceDesc}}</p>
+
+    <mat-tab-group>
+      <mat-tab label="Research">
+        <h3>Some more tab content</h3>
+        <p>...</p>
+      </mat-tab>
+      <mat-tab label="Volunteering">
+        <h3>Some more tab content</h3>
+        <p>...</p>
+      </mat-tab>
+      <mat-tab label="Abbvie">
+        <h3>Some tab content</h3>
+        <p>...</p>
+      </mat-tab>
+      <mat-tab label="Jump">
+        <h3>Some more tab content</h3>
+        <p>...</p>
+      </mat-tab>
+      <mat-tab label="Epic">
+        <h3>Some more tab content</h3>
+        <p>...</p>
+      </mat-tab>
+    </mat-tab-group>
+
+  </mat-card>
+</div>
+
+<div #education class="section education">
+  <h3>Education</h3>
+  <p>University of Illinois at Urbana Champaign, Class of 2019</p>
+  <p>BS in Bioengineering</p>
+  <p>BS in Computer Engineering</p>
+  <p>Minors in Chemistry and Math</p>
+
+  <label >
+    Explore some of the
+    <button mat-raised-button [matMenuTriggerFor]="classes">classes</button>
+    I've taken
+  </label>
+
+  <mat-menu #classes="matMenu">
+    <button mat-menu-item [matMenuTriggerFor]="math">Math</button>
+    <button mat-menu-item [matMenuTriggerFor]="chemistry">Chemistry</button>
+    <button mat-menu-item [matMenuTriggerFor]="bioe">Bioengineering</button>
+    <button mat-menu-item [matMenuTriggerFor]="ece">Computer Engineering</button>
+    <button mat-menu-item [matMenuTriggerFor]="physics">Physics</button>
+    <button mat-menu-item [matMenuTriggerFor]="biology">Biology</button>
+
+  </mat-menu>
+
+  <mat-menu #math="matMenu">
+    <a href="https://courses.illinois.edu/schedule/2018/spring/MATH/220" mat-menu-item>Math 220: Calculus</a>
+    <a href="https://courses.illinois.edu/schedule/2018/spring/MATH/231" mat-menu-item>Math 231: Calculus 2</a>
+    <a href="https://courses.illinois.edu/schedule/2018/spring/MATH/241" mat-menu-item>Math 241: Calculus 3</a>
+    <a href="https://courses.illinois.edu/schedule/2018/spring/MATH/285" mat-menu-item>Math 285: Differential Equations</a>
+    <a href="https://courses.illinois.edu/schedule/2018/spring/MATH/362" mat-menu-item>Math 362: Probability with Engineering Applications</a>
+    <a href="https://courses.illinois.edu/schedule/2018/spring/MATH/416" mat-menu-item>Math 416: Abstract Linear Algebra</a>
+    <a href="https://courses.illinois.edu/schedule/2018/spring/MATH/489" mat-menu-item>Math 489: Dynamics and Differential Equations</a>
+  </mat-menu>
+
+  <mat-menu #chemistry="matMenu">
+    <a href="https://courses.illinois.edu/schedule/2018/spring/CHEM/102" mat-menu-item>CHEM 102: General Chemistry I</a>
+    <a href="https://courses.illinois.edu/schedule/2018/spring/CHEM/103" mat-menu-item>CHEM 103: General Chemistry I Lab</a>
+    <a href="https://courses.illinois.edu/schedule/2018/spring/CHEM/104" mat-menu-item>CHEM 104: General Chemistry II</a>
+    <a href="https://courses.illinois.edu/schedule/2018/spring/CHEM/105" mat-menu-item>CHEM 105: General Chemistry II Lab</a>
+    <a href="https://courses.illinois.edu/schedule/2018/spring/CHEM/232" mat-menu-item>CHEM 232: Elementary Organic Chemistry I</a>
+    <a href="https://courses.illinois.edu/schedule/2018/spring/CHEM/233" mat-menu-item>CHEM 233: Elementary Organic Chemistry I Lab</a>
+    <a href="https://courses.illinois.edu/schedule/2018/spring/CHEM/332" mat-menu-item>CHEM 332: Elementary Organic Chemistry II</a>
+  </mat-menu>
+
+  <mat-menu #bioe="matMenu">
+    <button mat-menu-item [matMenuTriggerFor]="bioeintro">Intro Coursework</button>
+    <button mat-menu-item [matMenuTriggerFor]="bioeadv">Advanced Coursework</button>
+    <button mat-menu-item [matMenuTriggerFor]="bioelabs">Labs</button>
+  </mat-menu>
+
+  <mat-menu #bioelabs="matMenu">
+    <a href="https://courses.illinois.edu/schedule/2018/fall/BIOE/202"
+       mat-menu-item
+       >BIOE 202: Cell & Tissue Engineering Lab</a>
+    <a href="https://courses.illinois.edu/schedule/2018/fall/BIOE/303" mat-menu-item>BIOE 303: Quantitative Physiology Lab</a>
+    <a href="https://courses.illinois.edu/schedule/2018/spring/BIOE/415" mat-menu-item>BIOE 415: Biomedical Instrumentation Lab</a>
+    <a href="https://courses.illinois.edu/schedule/2018/fall/BIOE/435" mat-menu-item>BIOE 435: Senior Design I</a>
+    <a href="https://courses.illinois.edu/schedule/2018/spring/BIOE/436" mat-menu-item>BIOE 436: Senior Design II</a>
+  </mat-menu>
+
+  <mat-menu #bioeintro="matMenu">
+    <a href="https://courses.illinois.edu/schedule/2018/fall/BIOE/120" mat-menu-item>BIOE 120: Introduction to Bioengineering</a>
+    <a href="https://courses.illinois.edu/schedule/2018/fall/BIOE/201" mat-menu-item>BIOE 201: Conservation Principles Bioengineering</a>
+    <a href="https://courses.illinois.edu/schedule/2018/spring/BIOE/205" mat-menu-item>BIOE 205: Signals & Systems in Bioengineering</a>
+    <a href="https://courses.illinois.edu/schedule/2018/fall/BIOE/206" mat-menu-item>BIOE 206: Cellular Bioengineering</a>
+  </mat-menu>
+
+  <mat-menu #bioeadv="matMenu">
+    <a href="https://courses.illinois.edu/schedule/2018/fall/BIOE/298" mat-menu-item>BIOE 298: Analytical Tools for Bioengineering</a>
+    <a href="https://courses.illinois.edu/schedule/2018/fall/BIOE/220" mat-menu-item>BIOE 220: Bioenergetics</a>
+    <a href="https://courses.illinois.edu/schedule/2018/fall/BIOE/302" mat-menu-item>BIOE 302: Modeling Human Physiology</a>
+    <a href="https://courses.illinois.edu/schedule/2018/spring/BIOE/310" mat-menu-item>BIOE 310: Computational Tools Bio Data</a>
+    <a href="https://courses.illinois.edu/schedule/2018/spring/BIOE/360" mat-menu-item>BIOE 360: Transport & Flow in Bioengineering</a>
+    <a href="https://courses.illinois.edu/schedule/2018/spring/BIOE/414" mat-menu-item>BIOE 414: Biomedical Instrumentation</a>
+    <a href="https://courses.illinois.edu/schedule/2018/spring/BIOE/420" mat-menu-item>BIOE 420: Intro Bio Control Systems</a>
+    <a href="https://courses.illinois.edu/schedule/2018/fall/BIOE/476" mat-menu-item>BIOE 476: Tissue Engineering</a>
+  </mat-menu>
+
+
+  <mat-menu #ece="matMenu">
+    <button mat-menu-item [matMenuTriggerFor]="eceintro">Intro Coursework</button>
+    <button mat-menu-item [matMenuTriggerFor]="eceadv">Advanced Coursework</button>
+    <button mat-menu-item [matMenuTriggerFor]="ecelabs">Labs</button>
+  </mat-menu>
+
+  <mat-menu #ecelabs="matMenu">
+    <a href="https://courses.illinois.edu/schedule/2018/spring/ECE/391" mat-menu-item>ECE 311: Digital Signal Processing Lab</a>
+    <a href="https://courses.illinois.edu/schedule/2018/spring/ECE/391" mat-menu-item>ECE 385: Digital Systems Lab</a>
+  </mat-menu>
+
+  <mat-menu #eceintro="matMenu">
+    <a href="https://courses.illinois.edu/schedule/2018/spring/ECE/120" mat-menu-item>ECE 120: Introduction to Computing</a>
+    <a href="https://courses.illinois.edu/schedule/2018/spring/ECE/391" mat-menu-item>CS 125: Intro to Computer Science</a>
+    <a href="https://courses.illinois.edu/schedule/2018/spring/ECE/391" mat-menu-item>CS 173: Discrete Structures</a>
+    <a href="https://courses.illinois.edu/schedule/2018/spring/ECE/391" mat-menu-item>CS 199: Elements of Game Design</a>
+    <a href="https://courses.illinois.edu/schedule/2018/spring/ECE/391" mat-menu-item>CS 225: Data Structures</a>
+  </mat-menu>
+
+  <mat-menu #eceadv="matMenu">
+    <a href="https://courses.illinois.edu/schedule/2018/spring/ECE/391" mat-menu-item>ECE 310: Digital Signal Processing</a>
+    <a href="https://courses.illinois.edu/schedule/2018/spring/ECE/391" mat-menu-item>ECE 374: Intro to Algorithms & Models of Computation</a>
+    <a href="https://courses.illinois.edu/schedule/2018/spring/ECE/391" mat-menu-item>ECE 391: Computer Systems Engineering</a>
+    <a href="https://courses.illinois.edu/schedule/2018/spring/ECE/391" mat-menu-item>ECE 408: Applied Parallel Programming</a>
+    <a href="https://courses.illinois.edu/schedule/2018/spring/ECE/391" mat-menu-item>ECE 422: Computer Security I</a>
+    <a href="https://courses.illinois.edu/schedule/2018/spring/ECE/391" mat-menu-item>ECE 448: Artificial Intelligence</a>
+    <a href="https://courses.illinois.edu/schedule/2018/spring/ECE/391" mat-menu-item>CS 412: Introduction to Data Mining</a>
+    <a href="https://courses.illinois.edu/schedule/2018/spring/ECE/391" mat-menu-item>CS 466: Introduction to Bioinformatics</a>
+  </mat-menu>
+
+  <mat-menu #physics="matMenu">
+    <a href="https://courses.illinois.edu/schedule/2018/spring/PHYS/211" mat-menu-item>PHYS 211: Mechanics</a>
+    <a href="https://courses.illinois.edu/schedule/2018/spring/PHYS/212" mat-menu-item>PHYS 212: Electricity & Magnetism</a>
+    <a href="https://courses.illinois.edu/schedule/2018/spring/PHYS/213" mat-menu-item>PHYS 213: Intro Thermodynamics</a>
+    <a href="https://courses.illinois.edu/schedule/2018/spring/PHYS/214" mat-menu-item>PHYS 214: Intro Quantum Mechanics</a>
+  </mat-menu>
+
+  <mat-menu #biology="matMenu">
+    <a href="https://courses.illinois.edu/schedule/2018/spring/MCB/150" mat-menu-item>MCB 150: Molecular & Cellular Basis of Life</a>
+    <a href="https://courses.illinois.edu/schedule/2018/spring/MCB/450" mat-menu-item>MCB 450: Introductory Biochemistry</a>
+  </mat-menu>
+</div>
 
 <mat-divider class="divider"></mat-divider>
 
@@ -53,85 +193,15 @@
   <p>lorem;lwknfkjwbfqbefaljkshdalkjhdflkjahlkjahdlfkjahdlfkjahdlkfjahdlfkjhaldkj</p>
 
   <mat-accordion>
-    <mat-expansion-panel>
+    <mat-expansion-panel *ngFor="let project of this.projs">
       <mat-expansion-panel-header>
         <mat-panel-title>
-          Personal data
+          {{project}}
         </mat-panel-title>
         <mat-panel-description>
           Type your name and age
         </mat-panel-description>
       </mat-expansion-panel-header>
-    </mat-expansion-panel>
-
-    <mat-expansion-panel>
-      <mat-expansion-panel-header>
-        <mat-panel-title>
-          Personal data
-        </mat-panel-title>
-        <mat-panel-description>
-          Type your name and age
-        </mat-panel-description>
-      </mat-expansion-panel-header>
-    </mat-expansion-panel>
-
-    <mat-expansion-panel>
-      <mat-expansion-panel-header>
-        <mat-panel-title>
-          Personal data
-        </mat-panel-title>
-        <mat-panel-description>
-          Type your name and age
-        </mat-panel-description>
-      </mat-expansion-panel-header>
-    </mat-expansion-panel>
-
-    <mat-expansion-panel>
-      <mat-expansion-panel-header>
-        <mat-panel-title>
-          Personal data
-        </mat-panel-title>
-        <mat-panel-description>
-          Type your name and age
-        </mat-panel-description>
-      </mat-expansion-panel-header>
-    </mat-expansion-panel>
-
-    <mat-expansion-panel>
-      <mat-expansion-panel-header>
-        <mat-panel-title>
-          Personal data
-        </mat-panel-title>
-        <mat-panel-description>
-          Type your name and age
-        </mat-panel-description>
-
-      </mat-expansion-panel-header>
-      retererter
-    </mat-expansion-panel>
-
-
-    <mat-expansion-panel>
-      <mat-expansion-panel-header>
-        <mat-panel-title>
-          Personal data
-        </mat-panel-title>
-        <mat-panel-description>
-          Type your name and age
-        </mat-panel-description>
-
-
-
-
-
-
-      </mat-expansion-panel-header>
-
-      <p>This is the primary content of the panel.</p>
-
-      <mat-action-row>
-        <button mat-button>Click me</button>
-      </mat-action-row>
     </mat-expansion-panel>
   </mat-accordion>
 
@@ -140,9 +210,39 @@
 
 <mat-divider class="divider"></mat-divider>
 
+<div class="section skills">
+  <h3>Skills</h3>
+  <label for="proglanguages">Programming Languages</label>
+  <mat-chip-list id="proglanguages">
+    <mat-chip *ngFor="let lang of this.skillLangs" (click)="openDialog(lang)">
+      {{lang}}
+    </mat-chip>
+  </mat-chip-list>
+
+  <label for="frameworks">Frameworks and Software</label>
+  <mat-chip-list id="frameworks">
+    <mat-chip *ngFor="let frame of this.skillFrames" (click)="openDialog(frame)">
+      {{frame}}
+    </mat-chip>
+  </mat-chip-list>
+
+  <label for="misc">Miscellaneous</label>
+  <mat-chip-list id="misc">
+    <mat-chip *ngFor="let misc of this.skillMisc" (click)="openDialog(misc)">
+      {{misc}}
+    </mat-chip>
+  </mat-chip-list>
+  {{chipselection}}
+</div>
+
+<mat-divider class="divider"></mat-divider>
+
+
 <div #contact class="section contact">
   <h3>Contact</h3>
-  <a mat-raised-button href="mailto:example@email.com?subject=Email%20Subject">dadrake3@gmail.com</a>
+  <a mat-raised-button
+     matTooltip="Info about the action"
+      href="mailto:example@email.com?subject=Email%20Subject">dadrake3@gmail.com</a>
   <p>1(630)-800-5456</p>
   <i class="fab fa-github"></i>
 

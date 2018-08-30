@@ -17,7 +17,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 50px;
+  //margin-top: 50px;
   margin-bottom: 100px;
 
   position: static;
@@ -48,13 +48,38 @@
 }
 
 .divider{
-  width: 62%;
-  margin-left: 19%;
+  width: 60%;
+  margin-left: 20%;
 }
 .projects{
-  padding-bottom: 60px;
+  //padding-bottom: 60px;
+}
+
+.profile{
+  display: flex;
+  flex-direction: row;
+  .profile-info{
+
+    position: relative;
+    left: -30px;
+    top: -7px;
+    margin-left: 50px !important;
+    padding: 3px;
+
+    h3{
+      margin-top: 0px !important;
+    }
+  }
+
+
+
+
 }
 
 
 
-
+.mat-menu-panel {
+  overflow: auto;
+  position: relative;
+  bottom: 0px;
+}
